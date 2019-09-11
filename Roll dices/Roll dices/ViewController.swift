@@ -16,11 +16,11 @@ class ViewController: UIViewController {
     var diceIndex1 : Int = 0
     var diceIndex2 : Int = 0
     
-    var imagesArray : [UIImage] = []
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var imagesArray : [UIImage] = []
+
         for index in 1 ... 6 {
             imagesArray.append(UIImage(named: "dice\(index).png")!)
         }
