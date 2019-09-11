@@ -19,26 +19,7 @@ class ViewController: UIViewController{
 
 
     @IBAction func notePressed(_ sender: UIButton) {
-        
-        switch sender.tag {
-        case 1:
-            playSound(1)
-        case 2:
-            playSound(2)
-        case 3:
-            playSound(3)
-        case 4:
-            playSound(4)
-        case 5:
-            playSound(5)
-        case 6:
-            playSound(6)
-        case 7:
-            playSound(7)
-        default:
-        print("Not found")
-        }
-        
+        playSound(sender.tag)
     }
     
     func playSound(_ soundType : Int){
@@ -54,7 +35,7 @@ class ViewController: UIViewController{
             
             /// change fileTypeHint according to the type of your audio file (you can omit this)
             
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            player = try AVAudioPlayer(contentsOf: url)
             
             // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
             player!.play()
