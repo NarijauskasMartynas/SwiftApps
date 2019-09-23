@@ -66,8 +66,15 @@ class ViewController: UIViewController {
             var result : Double = 0
             switch operation {
             case "/":
-                result = previousNumber / Double(numberLabel.text!.replacingOccurrences(of: ",", with: "."))!
-                numberLabel.text = String(result)
+                if(Double(numberLabel.text!.replacingOccurrences(of: ",", with: "."))! == 0){
+                    numberLabel.text = "Error"
+                    isCalculation = true
+                }
+                else{
+                    result = previousNumber / Double(numberLabel.text!.replacingOccurrences(of: ",", with: "."))!
+                    numberLabel.text = String(result)
+                }
+
             case "x":
                 result = previousNumber * Double(numberLabel.text!.replacingOccurrences(of: ",", with: "."))!
                 numberLabel.text = String(result)
