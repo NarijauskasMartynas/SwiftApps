@@ -42,148 +42,196 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TLz-ky-pDI">
                                         <rect key="frame" x="0.0" y="107.5" width="365" height="99"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7e-kV-hiP">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7e-kV-hiP">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="99"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="AC">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DwN-Pq-lkO"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-2y-APw">
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-2y-APw">
                                                 <rect key="frame" x="94" y="0.0" width="83.5" height="99"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="+/-">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q32-zc-2vc"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-bC-drD">
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-bC-drD">
                                                 <rect key="frame" x="187.5" y="0.0" width="84" height="99"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsL-PA-Mwc"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaB-o8-uIs">
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaB-o8-uIs">
                                                 <rect key="frame" x="281.5" y="0.0" width="83.5" height="99"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="/">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pne-SK-KXy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5CZ-qW-lK2">
                                         <rect key="frame" x="0.0" y="215.5" width="365" height="98.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhZ-AM-kzu">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhZ-AM-kzu">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="98.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gk2-QG-IMW"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M8-tn-Ycd">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M8-tn-Ycd">
                                                 <rect key="frame" x="94" y="0.0" width="83.5" height="98.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HAV-Dd-1fH"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44C-KU-7UN">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44C-KU-7UN">
                                                 <rect key="frame" x="187.5" y="0.0" width="84" height="98.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5u-Cp-hpS"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpI-MC-Dwl">
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpI-MC-Dwl">
                                                 <rect key="frame" x="281.5" y="0.0" width="83.5" height="98.5"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNN-xO-kxb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="drq-oa-xGm">
                                         <rect key="frame" x="0.0" y="323" width="365" height="98.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXy-XO-EnT">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXy-XO-EnT">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="98.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8w0-ux-hfp"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk8-zr-MfH">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk8-zr-MfH">
                                                 <rect key="frame" x="94" y="0.0" width="83.5" height="98.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9TA-Oi-MmY"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1U-fU-tMh">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1U-fU-tMh">
                                                 <rect key="frame" x="187.5" y="0.0" width="84" height="98.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WT-kJ-VYd"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgg-IM-QqN">
+                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgg-IM-QqN">
                                                 <rect key="frame" x="281.5" y="0.0" width="83.5" height="98.5"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="-">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DPK-Dr-mxT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BwW-ic-5MG">
                                         <rect key="frame" x="0.0" y="430.5" width="365" height="99"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uR-Vi-Nqc">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uR-Vi-Nqc">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="99"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pQD-zo-MgH"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPZ-QO-4Um">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPZ-QO-4Um">
                                                 <rect key="frame" x="94" y="0.0" width="83.5" height="99"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L0G-NX-V4r"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-0n-W5z">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-0n-W5z">
                                                 <rect key="frame" x="187.5" y="0.0" width="84" height="99"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DQ-7U-rlF"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccN-i6-K9w">
+                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccN-i6-K9w">
                                                 <rect key="frame" x="281.5" y="0.0" width="83.5" height="99"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gay-eb-czh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -197,22 +245,31 @@
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8A-xg-YMj"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmL-TY-Snv">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmL-TY-Snv">
                                                 <rect key="frame" x="186.5" y="0.0" width="84.5" height="98.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title=",">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6yC-I9-bfx"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1Q-7T-zW4">
+                                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1Q-7T-zW4">
                                                 <rect key="frame" x="281" y="0.0" width="84" height="98.5"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Itm-nS-fRD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -232,6 +289,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="lZk-f1-gPa" id="zku-ro-6ny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
