@@ -40,12 +40,12 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
    @objc func temperatureLabelTapped(_ sender: UITapGestureRecognizer){
     
         if temperatureInCelsius{
-            weatherDataModel.temperature = weatherDataModel.temperature + 272
+            weatherDataModel.temperature = Int(round(Double(weatherDataModel.temperature) * 1.8 + 32.0))
             temperatureLabel.text = "\(weatherDataModel.temperature) F"
             temperatureInCelsius = false
         }
         else{
-            weatherDataModel.temperature = weatherDataModel.temperature - 272
+            weatherDataModel.temperature = Int(round((Double(weatherDataModel.temperature) - 32.0) / 1.8))
             temperatureLabel.text = "\(weatherDataModel.temperature) C"
             temperatureInCelsius = true
         }
@@ -73,7 +73,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
                 weatherDataModel.temperature = Int(temperature - 273.15)
             }
             else{
-                weatherDataModel.temperature = Int(temperature)
+                weatherDataModel.temperature = Int(round((temperature - 273.15) * 1.8 + 32))
             }
             weatherDataModel.city = json["name"].stringValue
             weatherDataModel.condition = json["weather"][0]["id"].intValue
