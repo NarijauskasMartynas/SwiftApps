@@ -2,8 +2,8 @@
 //  QuestionBank.swift
 //  Quizzler
 //
-//  Created by Martynas Narijauskas on 9/11/19.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Martynas Narijauskas on 9/22/19.
+//  Copyright © 2019 Martynas Narijauskas. All rights reserved.
 //
 
 import Foundation
