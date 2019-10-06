@@ -13,6 +13,12 @@ class TodoListViewController: UITableViewController {
 
     var itemArray = [TodoItem]()
     
+    var selectedCategory : CategoryItem?{
+        didSet{
+            loadItems()
+        }
+    }
+    
     let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -20,8 +26,6 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadItems()
-
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +65,7 @@ class TodoListViewController: UITableViewController {
             
             item.itemName = textField.text!
             item.done = false
+            item.parentCategory = self.selectedCategory
             self.itemArray.append(item)
             self.saveItems()
         }
@@ -89,10 +94,17 @@ class TodoListViewController: UITableViewController {
 
         let request : NSFetchRequest<TodoItem> = TodoItem.fetchRequest()
         
+        let categoryPredicate = NSPredicate(format: "parentCategory.title MATCHES[cd] %@", selectedCategory!.title!)
+        
         if fetchString != ""{
-            request.predicate = NSPredicate(format: "itemName CONTAINS[cd] %@", fetchString)
+            
+            let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, NSPredicate(format: "itemName CONTAINS[cd] %@", fetchString)])
+            request.predicate = compoundPredicate
             
             request.sortDescriptors = [NSSortDescriptor(key: "itemName", ascending: true)]
+        }
+        else{
+            request.predicate = categoryPredicate
         }
         
         do{
