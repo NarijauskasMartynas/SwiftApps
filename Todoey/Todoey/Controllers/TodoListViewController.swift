@@ -23,7 +23,6 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,16 +40,24 @@ class TodoListViewController: UITableViewController {
             cell.accessoryType = item.done ? .checkmark : .none
         }
         
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-//        let item = itemArray[indexPath.row]
-//        item.done = !item.done
-//
-//        saveItems()
+        if let item = itemArray?[indexPath.row] {
+
+            do {
+                try self.realm.write{
+                    item.done = !item.done
+                }
+            } catch {
+                print("error updating item")
+            }
+            
+            self.tableView.reloadData()
+
+        }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -67,7 +74,6 @@ class TodoListViewController: UITableViewController {
                 do{
                     try self.realm.write {
                         let item = TodoItem()
-                        
                         item.itemName = textField.text!
                         category.items.append(item)
                     }
@@ -76,6 +82,9 @@ class TodoListViewController: UITableViewController {
                     print("error adding item \(error)")
                 }
 
+            }
+            else{
+                print("category is 0")
             }
             
             self.tableView.reloadData()
@@ -88,17 +97,6 @@ class TodoListViewController: UITableViewController {
         alert.addAction(alertAction)
 
         present(alert, animated: true, completion: nil)
-    }
-    
-    func saveItems(){
-        do{
-           // try context.save()
-        }
-        catch{
-            print("Whoops \(error)")
-        }
-        
-        tableView.reloadData()
     }
     
     func loadItems(fetchString : String = ""){
