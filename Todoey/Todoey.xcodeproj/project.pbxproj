@@ -16,6 +16,7 @@
 		C0F63AE62347A42B00312671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F63AE52347A42B00312671 /* Assets.xcassets */; };
 		C0F63AE92347A42B00312671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F63AE72347A42B00312671 /* LaunchScreen.storyboard */; };
 		C7196A6C235B2065008A98DB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7196A6B235B2065008A98DB /* CategoryViewController.swift */; };
+		C7196A6E235B734C008A98DB /* SwipeableCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7196A6D235B734C008A98DB /* SwipeableCellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C0F63AE82347A42B00312671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0F63AEA2347A42B00312671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7196A6B235B2065008A98DB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		C7196A6D235B734C008A98DB /* SwipeableCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCellViewController.swift; sourceTree = "<group>"; };
 		FDC63297E2D65E4663211EEC /* Pods-Todoey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.debug.xcconfig"; path = "Target Support Files/Pods-Todoey/Pods-Todoey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			children = (
 				C0F63AE02347A42200312671 /* TodoListViewController.swift */,
 				C7196A6B235B2065008A98DB /* CategoryViewController.swift */,
+				C7196A6D235B734C008A98DB /* SwipeableCellViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				C0F63ADF2347A42200312671 /* AppDelegate.swift in Sources */,
 				C0F32671234A81DD009A32F7 /* CategoryItem.swift in Sources */,
 				C0F32673234A81FB009A32F7 /* TodoItem.swift in Sources */,
+				C7196A6E235B734C008A98DB /* SwipeableCellViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeableCellViewController {
 
     var categoryArray : Results<CategoryItem>?
     
@@ -19,7 +20,9 @@ class CategoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = 80.0
         loadCategories()
+        tableView.separatorStyle = .none
 
     }
 
@@ -28,12 +31,24 @@ class CategoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryArray?.count ?? 0
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
 
-        cell.textLabel?.text = categoryArray?[indexPath.row].title ?? ""
+        if let category = categoryArray?[indexPath.row]{
+            
+            cell.textLabel?.text = category.title
+            
+            guard let categoryColor = UIColor(hexString: category.colorHex) else{
+                fatalError()
+            }
+            
+            cell.textLabel?.textColor = ContrastColorOf(categoryColor, returnFlat: true)
+            
+            cell.backgroundColor = categoryColor
+        }
+        
+        
 
         return cell
     }
@@ -62,6 +77,7 @@ class CategoryViewController: UITableViewController {
             let newCategory = CategoryItem()
             
             newCategory.title = textField.text!
+            newCategory.colorHex = UIColor.randomFlat().hexValue()
             
             self.saveCategory(category: newCategory)
             
@@ -92,6 +108,19 @@ class CategoryViewController: UITableViewController {
         }
         
         tableView.reloadData()
+    }
+    
+    override func deleteElement(at row: Int) {
+        if let categoryItem = self.categoryArray?[row]{
+            do{
+                try self.realm.write{
+                    self.realm.delete(categoryItem)
+                }
+            }
+            catch{
+                print("error deleting the category")
+            }
+        }
     }
 
 

@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeableCellViewController {
 
     var itemArray : Results<TodoItem>?
     
@@ -19,10 +20,23 @@ class TodoListViewController: UITableViewController {
         }
     }
     
+    @IBOutlet weak var searchBar: UISearchBar!
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 80.0
+        tableView.separatorStyle = .none
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        title = selectedCategory!.title
+        searchBar.barTintColor = UIColor(hexString: selectedCategory!.colorHex)
+        
+        if let navBar = navigationController?.navigationBar{
+            navBar.tintColor = FlatBlack()
+
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,10 +44,16 @@ class TodoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellItem", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let itemResults = itemArray{
             cell.textLabel?.text = itemResults[indexPath.row].itemName
+            
+            if let colour = UIColor(hexString: selectedCategory!.colorHex)?.darken(byPercentage:
+                CGFloat(indexPath.row) / CGFloat(itemArray!.count)){
+                cell.backgroundColor = colour
+                cell.textLabel?.textColor = ContrastColorOf(colour, returnFlat: true)
+            }
             
             let item = itemResults[indexPath.row]
             
@@ -104,6 +124,19 @@ class TodoListViewController: UITableViewController {
         itemArray = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: false)
         tableView.reloadData()
         
+    }
+    
+    override func deleteElement(at row: Int) {
+        if let elementToDelete = itemArray?[row]{
+            do{
+                try realm.write {
+                    realm.delete(elementToDelete)
+                }
+            }
+            catch{
+                print("error deleting the item")
+            }
+        }
     }
 }
 
