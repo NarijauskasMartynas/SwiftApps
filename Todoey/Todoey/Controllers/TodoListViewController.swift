@@ -32,13 +32,35 @@ class TodoListViewController: SwipeableCellViewController {
     override func viewWillAppear(_ animated: Bool) {
         title = selectedCategory!.title
         searchBar.barTintColor = UIColor(hexString: selectedCategory!.colorHex)
-        
+        customizeNavBar(colorHex: selectedCategory!.colorHex)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        customizeNavBar(colorHex: "#000000")
+    }
+    
+    func customizeNavBar(colorHex : String){
         if let navBar = navigationController?.navigationBar{
-            navBar.tintColor = FlatBlack()
+            
+            guard let color = UIColor(hexString: colorHex) else{
+                fatalError()
+            }
+            if #available(iOS 13.0, *) {
+                let navBarApp = UINavigationBarAppearance()
+                navBarApp.configureWithOpaqueBackground()
+                navBarApp.backgroundColor = color
+                navBarApp.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : ContrastColorOf(color, returnFlat: true)]
+                navBar.standardAppearance = navBarApp
+                navBar.compactAppearance = navBarApp
+                navBar.scrollEdgeAppearance = navBarApp
+                navBar.tintColor = ContrastColorOf(color, returnFlat: true)
+            } else {
+                // Fallback on earlier versions
+            }
 
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray?.count ?? 0
     }
@@ -123,7 +145,6 @@ class TodoListViewController: SwipeableCellViewController {
     func loadItems(fetchString : String = ""){
         itemArray = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: false)
         tableView.reloadData()
-        
     }
     
     override func deleteElement(at row: Int) {
@@ -153,17 +174,12 @@ extension TodoListViewController : UISearchBarDelegate{
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadItems()
-            
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-        }
-        else{
+        
+        loadItems()
+        
+        if(searchBar.text!.count != 0){
             itemArray = itemArray?.filter("itemName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "itemName", ascending: true)
-            tableView.reloadData()
         }
+        tableView.reloadData()
     }
-    
 }
