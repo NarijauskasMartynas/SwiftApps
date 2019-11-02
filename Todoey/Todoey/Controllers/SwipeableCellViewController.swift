@@ -45,7 +45,6 @@ class SwipeableCellViewController: UITableViewController, SwipeTableViewCellDele
     }
     
     func deleteElement(at row: Int){
-        //overriding
     }
 
 }

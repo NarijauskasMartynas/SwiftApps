@@ -57,7 +57,6 @@ class TodoListViewController: SwipeableCellViewController {
             } else {
                 // Fallback on earlier versions
             }
-
         }
     }
     
@@ -170,7 +169,6 @@ extension TodoListViewController : UISearchBarDelegate{
         DispatchQueue.main.async {
             searchBar.resignFirstResponder()
         }
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

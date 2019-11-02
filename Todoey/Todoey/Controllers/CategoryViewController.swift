@@ -16,7 +16,6 @@ class CategoryViewController: SwipeableCellViewController {
     
     let realm = try! Realm()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,8 +46,6 @@ class CategoryViewController: SwipeableCellViewController {
             
             cell.backgroundColor = categoryColor
         }
-        
-        
 
         return cell
     }
@@ -61,7 +58,7 @@ class CategoryViewController: SwipeableCellViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TodoListViewController
-        
+ 
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedCategory = categoryArray?[indexPath.row]
         }
@@ -80,7 +77,6 @@ class CategoryViewController: SwipeableCellViewController {
             newCategory.colorHex = UIColor.randomFlat().hexValue()
             
             self.saveCategory(category: newCategory)
-            
         }
         
         alertController.addTextField { (alertTextField) in
@@ -106,7 +102,6 @@ class CategoryViewController: SwipeableCellViewController {
         catch{
             print("error saving category")
         }
-        
         tableView.reloadData()
     }
     
@@ -122,6 +117,4 @@ class CategoryViewController: SwipeableCellViewController {
             }
         }
     }
-
-
 }
